@@ -73,20 +73,24 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
- 
 
   if(keyDown('Right_Arrow')){
 	  helicopterSprite.velocityX=2;
+	  packageSprite.velocityX=2;
   }
 
   if(keyDown('Left_Arrow')){
 	helicopterSprite.velocityX=-2;
+	packageSprite.velocityX=-2;
 }
 
   if(keyDown('Down_Arrow')){
 	packageSprite.velocityY=5;
 	
 }
+if(packageSprite.isTouching(boxBase)){
+    packageSprite.collide(boxBase);
+  }
 
   
   drawSprites();
@@ -94,4 +98,3 @@ function draw() {
   
  
 }
-
